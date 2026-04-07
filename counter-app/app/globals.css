@@ -1,1 +1,41 @@
 @import "tailwindcss";
+
+@keyframes shake {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  15%  { transform: translate(-4px, 3px) rotate(-1deg); }
+  30%  { transform: translate(4px, -3px) rotate(1deg); }
+  45%  { transform: translate(-3px, 2px) rotate(-0.5deg); }
+  60%  { transform: translate(3px, -1px) rotate(0.5deg); }
+  75%  { transform: translate(-1px, 2px) rotate(0deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.shake {
+  animation: shake 0.35s ease-out;
+}
+
+@keyframes neon-flicker {
+  0%, 100% { opacity: 1; }
+  92%       { opacity: 1; }
+  93%       { opacity: 0.6; }
+  94%       { opacity: 1; }
+  96%       { opacity: 0.7; }
+  97%       { opacity: 1; }
+}
+
+.neon-flicker {
+  animation: neon-flicker 4s infinite;
+}
+
+@keyframes pulse-pink {
+  0%, 100% { box-shadow: 0 0 8px 2px #f72585, 0 0 24px 4px #f7258544; }
+  50%       { box-shadow: 0 0 16px 4px #f72585, 0 0 40px 8px #f7258566; }
+}
+
+@keyframes pulse-blue {
+  0%, 100% { box-shadow: 0 0 8px 2px #4cc9f0, 0 0 24px 4px #4cc9f044; }
+  50%       { box-shadow: 0 0 16px 4px #4cc9f0, 0 0 40px 8px #4cc9f066; }
+}
+
+.neon-pink { animation: pulse-pink 2s ease-in-out infinite; }
+.neon-blue { animation: pulse-blue 2s ease-in-out infinite; }
